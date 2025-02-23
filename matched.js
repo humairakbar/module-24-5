@@ -1,13 +1,13 @@
-const numbers = [12, 34, 56, 78, 89];
+// const numbers = [12, 34, 56, 78, 89];
 
 // for(let i = 0; i< numbers.length; i++){
 //     const number = numbers[i];
 //     console.log(number);
 // }
 
-for(const number of numbers){
-    // console.log(number);
-}
+// for(const number of numbers){
+//     // console.log(number);
+// }
 
 const products = [
     {id : 1, name : 'xiomi phone one night', price : 19000},
@@ -22,7 +22,14 @@ const products = [
 ];
 
 function matchedProducts(products, search){
+    const matched = [];
     for(const product of products){
-        console.log(product);
+        if(product.name.toLowerCase().includes(search.toLowerCase())){
+            matched.push(product);
+        }
     }
+    return matched;
 }
+
+const result = matchedProducts(products, 'phone');
+console.log(result);
